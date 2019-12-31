@@ -262,6 +262,7 @@ then
     rm $outdir/$project.filtered.tagged.Aligned.out.bam
     rm $outdir/$project.filtered.tagged.Aligned.out.bam.ex.featureCounts.bam
     rm $outdir/$project.filtered.tagged.unmapped.bam
+    rm $outdir/$project.filtered.tagged.Aligned.out.bam.in.featureCounts.bam
   fi
 fi
 
