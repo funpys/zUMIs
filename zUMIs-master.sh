@@ -75,7 +75,7 @@ mem_limit=`grep 'mem_limit:' $yaml | awk '{print $2}'`
 isstats=`grep 'make_stats:' $yaml | awk '{print $2}'`
 fqfiles=`grep 'name:' $yaml | awk '{print $2}'`
 velo=`grep 'velocyto:' $yaml | awk '{print $2}'`
-rm_interm= `grep 'rm_interm:' $yaml | awk '{print $2}'`
+rm_interm=`grep 'rm_interm:' $yaml | awk '{print $2}'`
 
 if grep -q 'samtools_exec:' $yaml
   then
