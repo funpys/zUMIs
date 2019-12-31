@@ -75,7 +75,7 @@ mem_limit=`grep 'mem_limit:' $yaml | awk '{print $2}'`
 isstats=`grep 'make_stats:' $yaml | awk '{print $2}'`
 fqfiles=`grep 'name:' $yaml | awk '{print $2}'`
 velo=`grep 'velocyto:' $yaml | awk '{print $2}'`
-
+rm_interm = `grep 'rm_interm:' $yaml | awk '{print $2}'`
 
 if grep -q 'samtools_exec:' $yaml
   then
@@ -258,6 +258,11 @@ then
       $Rexc $zumisdir/zUMIs-stats2.R $yaml
   fi
   date
+    if [[ "$rm_interm" == "yes" ]]; then
+    rm $outdir/$project.filtered.tagged.Aligned.out.bam
+    rm $outdir/$project.filtered.tagged.Aligned.out.bam.ex.featureCounts.bam
+    rm $outdir/$project.filtered.tagged.unmapped.bam
+  fi
 fi
 
 #convenience function
