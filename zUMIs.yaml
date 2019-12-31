@@ -28,11 +28,13 @@ sequence_files:
 reference:
   STAR_index: #path to STAR genome index
   GTF_file: #path to gene annotation file in GTF format
+  GTF_file_mapping: #path to gene annotation file in GTF format for STAR mapping
   additional_files: #Optional parameter. It is possible to give additional reference sequences here, eg ERCC.fa
   additional_STAR_params: #Optional parameter. you may add custom mapping parameters to STAR here
 
 #output directory
 out_dir: #specify the full path to the output directory
+rm_interm: yes #remove intermediate bam files
 
 ###########################################
 #below, you may optionally change default parameters
