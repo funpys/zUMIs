@@ -78,7 +78,7 @@ if(avail_cores < 3){
   cores_star <- avail_cores - cores_samtools
 }
 gtf_to_use <- inp$reference$GTF_file_mapping
-param_defaults <- paste("--readFilesCommand ",samtools," view -@",samtools_load_cores," --outSAMmultNmax 1 --outFilterMultimapNmax 10000000 --outSAMunmapped Within --outSAMtype SAM --outStd SAM")
+param_defaults <- paste("--readFilesCommand ",samtools," view -@",samtools_load_cores," --outSAMmultNmax 1 --outFilterMultimapNmax 10000000 --outSAMunmapped Within --outSAMtype SAM --outStd SAM --outMultimapperOrder Random")
 param_misc <- paste("--genomeDir",inp$reference$STAR_index,
                     "--sjdbGTFfile",gtf_to_use,
                     "--runThreadN",cores_star,
